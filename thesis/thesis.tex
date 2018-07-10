@@ -59,6 +59,10 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{xcolor}
+\usepackage{mdframed}
+\usepackage{mdwlist}
+
 % \usepackage{minted}
 % \newenvironment{code}{\captionsetup{type=listing}}{}
 % \SetupFloatingEnvironment{listing}{name=Source Code}
@@ -143,6 +147,7 @@
 %% For an excellent set of examples, see Tufte's "Visual Display of
 %% Quantitative Information" or "Envisioning Information".
 \usepackage{color}
+\usepackage{transparent}
 \definecolor{greytext}{gray}{0.5}
 
 %% comment: provides a new {comment} environment: all text inside the
@@ -178,7 +183,8 @@
 \usepackage{url}
 \urlstyle{sf}   % typeset urls in sans-serif
 
-
+\usepackage{xspace}
+\usepackage{multicol}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -284,7 +290,7 @@
 % \widowpenalty=10000   % try harder to avoid widows
 % \tolerance=1000
 
-\usepackage[margin=1.4in,top=1.4in,bottom=1.4in]{geometry}
+\usepackage[margin=1.35in,top=1.35in,bottom=1.35in]{geometry}
 
 %% And include some of our own useful macros
 \input{macros}
@@ -296,8 +302,7 @@
 %% Document meta-data: be sure to also change the \hypersetup information
 %%
 
-\title{Modular Electromagnetic Simulations and Inversions}
-\subtitle{with applications to reservoir imaging}
+\title{Electromagnetic methods for imaging subsurface injections}
 
 \author{Lindsey J. Heagy}
 \previousdegree{B.Sc. Geophysics, University of Alberta, 2012}
@@ -310,13 +315,13 @@
 
 \faculty{The Faculty of Science}
 \department{Earth, Ocean and Atmospheric Sciences}
-\submissionmonth{May}
-\submissionyear{2017}
+\submissionmonth{June}
+\submissionyear{2018}
 
 %% hyperref package provides support for embedding meta-data in .PDF
 %% files
 \hypersetup{
-  pdftitle={Modular Electromagnetic Simulations and Inversions  (DRAFT: \today)},
+  pdftitle={ (DRAFT: \today)},
   pdfauthor={Lindsey J. Heagy},
   pdfkeywords={Electromagnetics, Inversions, Geophysics}
 }
@@ -392,12 +397,13 @@
 %    1. Introduction
 % \part{First part}
 \include{sections/chapter1/introduction}
-\include{sections/chapter2/scale_and_physprops}
-\include{sections/chapter3/simpeg_em}
-\include{sections/chapter4/casing}
-\include{sections/chapter5/casing_and_3D}
-\include{sections/chapter6/inversion_for_fractures}
-\include{sections/chapter7/conclusions_and_future}
+\include{sections/chapter2/phys_prop_model}
+\include{sections/chapter3/modelling_steel_cased_wells}
+\include{sections/chapter4/casing_dc}
+\include{sections/chapter5/casing_em_conductivity}
+\include{sections/chapter6/casing_em_permeability}
+\include{sections/chapter7/fracture_inversion}
+\include{sections/chapter8/conclusions_and_future}
 
 %    3. Notes
 %    4. Footnotes
@@ -406,15 +412,16 @@
 \begin{singlespace}
 \raggedright
 \bibliographystyle{elsarticle-harv}
-\bibliography{refs.bib}
+\bibliography{refs,casingbib,seogirefs,lindseyrefs,gudnirefs,thesisbib}
 \end{singlespace}
 
 \appendix
 %    6. Appendices (including copies of all required UBC Research
 %       Ethics Board's Certificates of Approval)
 %\include{reb-coa}  % pdfpages is useful here
-\include{sections/appendix1/simpeg}
-\include{sections/appendix2/dissemination}
+\include{sections/appendix1/concentric_spheres}
+\include{sections/appendix2/simpegem}
+\include{sections/appendix3/education}
 
 \backmatter
 %    7. Index
