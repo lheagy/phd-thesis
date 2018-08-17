@@ -185,6 +185,7 @@
 
 \usepackage{xspace}
 \usepackage{multicol}
+\usepackage{rotating}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%
@@ -323,7 +324,7 @@
 \hypersetup{
   pdftitle={ (DRAFT: \today)},
   pdfauthor={Lindsey J. Heagy},
-  pdfkeywords={Electromagnetics, Inversions, Geophysics}
+  pdfkeywords={Electromagnetics, Inversions, Boreholes, Numerical Modelling, Partial differential equations, Open source software}
 }
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -400,10 +401,9 @@
 \include{sections/chapter2/phys_prop_model}
 \include{sections/chapter3/modelling_steel_cased_wells}
 \include{sections/chapter4/casing_dc}
-\include{sections/chapter5/casing_em_conductivity}
-\include{sections/chapter6/casing_em_permeability}
-\include{sections/chapter7/fracture_inversion}
-\include{sections/chapter8/conclusions_and_future}
+\include{sections/chapter5/casing_em}
+\include{sections/chapter6/fracture_inversion}
+\include{sections/chapter7/conclusions_and_future}
 
 %    3. Notes
 %    4. Footnotes
@@ -420,13 +420,12 @@
 %       Ethics Board's Certificates of Approval)
 %\include{reb-coa}  % pdfpages is useful here
 \include{sections/appendix1/concentric_spheres}
-\include{sections/appendix2/simpegem}
-\include{sections/appendix3/education}
+\include{sections/appendix2/scemt_derivatives}
+\include{sections/appendix3/simpegem}
 
 \backmatter
 %    7. Index
-% See the makeindex package: the following page provides a quick overview
+% See {}the makeindex package: the following page provides a quick overview
 % <http://www.image.ufl.edu/help/latex/latex_indexes.shtml>
-
 
 \end{document}

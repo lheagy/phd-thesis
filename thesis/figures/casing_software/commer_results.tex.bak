@@ -1,0 +1,7 @@
+\begin{figure}[htb]
+    \begin{center}
+    \includegraphics[width=0.8\columnwidth]{figures/commer_results.png}
+    \end{center}
+\caption{Time domain EM response comparison with \citep{Commer2015}. Each of the different line colors is associated with a different location; offsets are with respect to the location of the well.}
+\label{fig:commer_results}
+\end{figure}
