@@ -156,7 +156,7 @@ We begin by applying standard inversion techniques and perform a voxel inversion
 
 The choice of parameters is quite standard, similar to how one would approach a blind inversion. In the regularization, we use $\alpha_s = 10^{-3}$, $\alpha_x = \alpha_z = 1$. We adopt a $\beta$-cooling schedule that reduces the value of $\beta$ by a factor of 8 every 3 iterations. The initial $\beta$ is chosen by estimating the largest eigenvalue of the  model regularization and data misfit through one iteration of the power method and taking their ratio; $\beta_0$ is then a scalar multiple of that. For the following inversions, we use a factor of 10. The initial and reference model are equal to the half-space resistivity of 100 $\Omega$m.
 
-The results of the first inversion we run are shown in Figure \ref{fig:dc_smooth_inversion_1e-1}. This inversion reached a global $\chi$-factor of $<0.1$ and fits all data points within 5\% (Figure \ref{fig:dc_smooth_inversion_1e-01}c). It converged in two iterations. As expected in an Tikhonov-style inversion, the recovered model is smooth and diffuse. Perhaps unexpected is the location of the center of the recovered target; its depth is shifted below the true location, closer to the end of the well. Typically, we might expect that if the inversion were to shift the location of a target, it would be shifted up, closer to the receivers, where we have greater sensitivity. However, the presence of the casing alters the sensitivity. In Chapter \ref{ch:casing_software}, we demonstrated that there is an increase in charge near the ends of the well (see Figure \ref{fig:kaufman_finite_well}, in particular), for the DC problem, this translates to an increase in sensitivity near the end of the well.
+The results of the first inversion we run are shown in Figure \ref{fig:dc_smooth_inversion_1e-01}. This inversion reached a global $\chi$-factor of $<0.1$ and fits all data points within 5\% (Figure \ref{fig:dc_smooth_inversion_1e-01}c). It converged in two iterations. As expected in an Tikhonov-style inversion, the recovered model is smooth and diffuse. Perhaps unexpected is the location of the center of the recovered target; its depth is shifted below the true location, closer to the end of the well. Typically, we might expect that if the inversion were to shift the location of a target, it would be shifted up, closer to the receivers, where we have greater sensitivity. However, the presence of the casing alters the sensitivity. In Chapter \ref{ch:casing_software}, we demonstrated that there is an increase in charge near the ends of the well (see Figure \ref{fig:kaufman_finite_well}, in particular), for the DC problem, this translates to an increase in sensitivity near the end of the well.
 
 
 \input{figures/inversion/dc_smooth_inversion_1e-01.tex}
@@ -168,10 +168,32 @@ If we push the inversion harder, the depth of the target is better-resolved, as 
 
 \input{figures/inversion/dc_smooth_inversion_5e-02.tex}
 
-To counter the vertical elongation of the target, we can always promote more horizontally elongated structures by altering the regularization. Figure \ref{fig:dc_smooth_inversion_5e-02_alpha_100} demonstrates an inversion using $\alpha_x=100$ and fitting the data to a $\chi$-factor < 0.05.
+To counter the vertical elongation of the target, we can always promote more horizontally elongated structures by altering the regularization. Figure \ref{fig:dc_smooth_inversion_5e-02_alpha_100} demonstrates an inversion using $\alpha_x=100$ and fitting the data to a $\chi$-factor $<$ 0.05. Using a large $\alpha_x$ smears out the target horizontally and also reduces the maximum conductivity as compared to Figure \ref{fig:dc_smooth_inversion_5e-02}.
+
 
 \input{figures/inversion/dc_smooth_inversion_5e-02_alpha_100.tex}
 
-In summary, assuming high data quality, we can recover a conductive structure centered at the correct depth using a standard Tikhonov-style inversion. This, however, is not a particularly effective approach for delineating the extent of the fractured region of the reservoir. With the aim of using the inversion to obtain parameters indicative of the injection, we next examine an approach using a parametric inversion.
+Using a Tikhonov style inversion, we can recover a target at the correct location, and by adapting the $\alpha$ values, we can recover a general geometry reflective of the true target. However, these are not particularly insightful images for delineating the extent of the fractured region of the reservoir. With the aim of using the inversion to obtain parameters indicative of the injection, we next examine an approach using a parametric inversion.
+\subsection{Parametric Inversion}
+In a parametric approach to the inversion, we represent the fractured volume of rock as a simple geometric structure, and will invert for properties of the background, target and the position and geometry of the target. For the following examples, we treat the fractured volume of rock as a cylinder. We fix $x_0 = 0$m and invert for the log-conductivity of the background and the target, as well as the depth, radius and thickness of the target. We again push the inversion quite hard, fitting the following results to a global $\chi$-factor $<0.05$, meaning that most of the data are fit within $\sim 2\%$.
+
+For the parametric inversion to find an initial step, it is important that we start with a model where target has physical properties distinct from the background. In this example, we build a starting model based on the first voxel inversion result, shown in Figure \ref{fig:dc_smooth_inversion_1e-01}. The center of the target is at 980m depth, its radius is 10m and it thickness is 5m. The conductivity of the background is $10^{-2}$ S/m and the conductivity of the target is set to $3 \times 10^-2$ S/m. Figure \ref{fig:parametric_voxel1} shows the recovered model; the true geometry is outlined by the solid white line and the starting model geometry is shown by the dashed white line. The depth and thickness of the recovered model are well-resolved. The radius is underestimated (18m) and the conductivity over-estimated (950 S/m).
+
+
+\input{figures/inversion/parametric_voxel1.tex}
+
+If instead, we use the true depth-center of the target, informed by the inversion result in Figure \ref{fig:dc_smooth_inversion_5e-02}, we obtain the model shown in Figure \ref{fig:parametric_voxel2}. The starting conductivities, radius and thickness were the same used in the previous inversion. Here, the depth to the center of the target remains at the correct location, and the recovered radius, 55m, is closer to the true model. However, the recovered conductivity, $10^9$ S/m is drastically over-estimated. Typically, one might expect that there is a saturation in the conductivity effects for a DC experiment. For example, if we consider a conductive sphere in a half-space, whether the conductivity of the sphere is 2 or 3 orders of magnitude larger than the background, makes little difference in the data. However, in this example, the conductive target is directly coupled to the casing, which has a conductivity of $10^4$ S/m. We suspect that this survey geometry is sensitive to a larger dynamic range of conductivity values and this might contribute to the large updates in the electrical conductivity of the target.
+
+\input{figures/inversion/parametric_voxel2.tex}
+
+The casing spreads out the source currents along its length, this may reduce sensitivity to the depth and thickness of the target. If that is the case, perhaps starting with the correct depth-center and thickness will improve the result. Figure \ref{fig:parametric_voxel2_dz10} shows the recovered model when the correct depth and vertical extent of the target are used for the starting model. The conductivity is still over-estimated (960 S/m), but not nearly as severe as the previous inversion. The depth has been shifted down beneath the target, and the radius (23 m) is underestimated.
+
+
+\input{figures/inversion/parametric_voxel2_dz10.tex}
+
+Presumably, the injection point is known, and therefore it might be reasonable to fix the value of $z_0$ in the inversion. In Figure \ref{fig:parametric_voxel2_dz10_fixedz0}, we have run an inversion using the same starting model as in the previous inversion, but now have fixed the location of the target to the true target depth of 955m depth. The radius of the recovered model is very similar to that shown in Figure \ref{fig:parametric_voxel2_dz10}, as is the thickness (25 m). The conductivity, $0.7$ S/m, much closer to the true conductivity (3 S/m) than any of the previous inversions.
+
+
+\input{figures/inversion/parametric_fixed_z0.tex}
 
 
