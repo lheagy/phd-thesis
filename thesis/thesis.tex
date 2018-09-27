@@ -291,7 +291,9 @@
 % \widowpenalty=10000   % try harder to avoid widows
 % \tolerance=1000
 
+% \usepackage[margin=1.35in,top=1.35in,bottom=1.35in]{geometry}
 \usepackage[margin=1.35in,top=1.35in,bottom=1.35in]{geometry}
+
 
 %% And include some of our own useful macros
 \input{macros}
@@ -316,8 +318,17 @@
 
 \faculty{The Faculty of Science}
 \department{Earth, Ocean and Atmospheric Sciences}
-\submissionmonth{June}
+\submissionmonth{September}
 \submissionyear{2018}
+
+% details of your examining committee
+\examiningcommittee{Douglas W. Oldenburg, Earth, Ocean and Atmospheric Sciences}{Supervisor}
+\examiningcommittee{Eldad Haber, Earth, Ocean and Atmospheric Sciences}%
+    {Supervisory Committee Member}
+\examiningcommittee{Michael Bostock, Earth, Ocean and Atmospheric Sciences}{Supervisory Committee Member}
+% \examiningcommittee{Magnus Monolith, Other Department}{Additional Examiner}
+
+
 
 %% hyperref package provides support for embedding meta-data in .PDF
 %% files
@@ -326,6 +337,14 @@
   pdfauthor={Lindsey J. Heagy},
   pdfkeywords={Electromagnetics, Inversions, Boreholes, Numerical Modelling, Partial differential equations, Open source software}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% Document meta-data: be sure to also change the \hypersetup information
+%%
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -351,43 +370,50 @@
 %    1. Title page (mandatory)
 \maketitle
 
-%    2. Abstract (mandatory - maximum 350 words)
+%    2. Committee page
+\makecommitteepage
+
+%    3. Abstract (mandatory - maximum 350 words)
 \include{sections/abstract}
 \cleardoublepage
 
-%    3. Preface
+%    4. Lay Abstract (mandatory - maximum 150 words)
+\include{sections/lay_summary}
+\cleardoublepage
+
+%    5. Preface
 \include{sections/preface}
 \cleardoublepage
 
-%    4. Table of contents (mandatory - list all items in the preliminary pages
+%    6. Table of contents (mandatory - list all items in the preliminary pages
 %    starting with the abstract, followed by chapter headings and
 %    subheadings, bibliographies and appendices)
 \tableofcontents
 \cleardoublepage    % required by tocloft package
-
-%    5. List of tables (mandatory if thesis has tables)
+{}
+%    7. List of tables (mandatory if thesis has tables)
 \listoftables
 \cleardoublepage    % required by tocloft package
 
-%    6. List of figures (mandatory if thesis has figures)
+%    8. List of figures (mandatory if thesis has figures)
 \listoffigures
 \cleardoublepage    % required by tocloft package
 
 % \listof{code}{List of Programs}
 % \addcontentsline{toc}{chapter}{List of Programs}
 
-%    7. List of illustrations (mandatory if thesis has illustrations)
-%    8. Lists of symbols, abbreviations or other (optional)
+%    9. List of illustrations (mandatory if thesis has illustrations)
+%    10. Lists of symbols, abbreviations or other (optional)
 
-%    9. Glossary (optional)
+%    11 Glossary (optional)
 % \input{sections/glossary} % always input, since other macros may rely on it
 
 \textspacing        % begin one-half or double spacing
 
-%   10. Acknowledgements (optional)
+%   12. Acknowledgements (optional)
 \include{sections/acknowledgements}
 
-%   11. Dedication (optional)
+%   13. Dedication (optional)
 \include{sections/dedication}
 
 % Body of Thesis (not all sections may apply)
@@ -403,13 +429,14 @@
 \include{sections/chapter4/casing_dc}
 \include{sections/chapter5/casing_em}
 \include{sections/chapter6/fracture_inversion}
-\include{sections/chapter7/conclusions_and_future}
+\include{sections/chapter7/conclusions}
 
 %    3. Notes
 %    4. Footnotes
 
 %    5. Bibliography
 \begin{singlespace}
+\scriptsize
 \raggedright
 \bibliographystyle{elsarticle-harv}
 \bibliography{refs,casingbib,seogirefs,lindseyrefs,gudnirefs,thesisbib}
@@ -419,9 +446,11 @@
 %    6. Appendices (including copies of all required UBC Research
 %       Ethics Board's Certificates of Approval)
 %\include{reb-coa}  % pdfpages is useful here
-\include{sections/appendix1/concentric_spheres}
-\include{sections/appendix2/scemt_derivatives}
-\include{sections/appendix3/simpegem}
+\include{sections/appendix1/code_list}
+\include{sections/appendix2/concentric_spheres}
+\include{sections/appendix3/scemt_derivatives}
+\include{sections/appendix4/simpegem}
+\include{sections/appendix5/education}
 
 \backmatter
 %    7. Index

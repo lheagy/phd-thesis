@@ -1,0 +1,88 @@
+\chapter{Self consistent effective medium theory derivatives}
+\label{app:scemt-derivs}
+
+Here, I derive the sensitivity of the effective conductivity calculated via effective medium theory, $\sigma^*$ with respect to the concentration of the included material $\phi$ for the inversions discussed in Chapter \ref{ch:inversion}. The effective conductivity is found by solving \ref{eq:effective_medium_theory_mapping}, which I restate here:
+\begin{equation}
+    (1-\varphi)(\sigma^* - \sigma_0)R^{(0,*)} + \varphi(\sigma^* - \sigma_1)R^{(1,*)}= 0
+\label{eq:emt_mapping}
+\end{equation}
+where $\sigma_0$ is the conductivity of the background, $\sigma_1$ is the conductivity of the included phase, and $\mathbf{R}^{(i,*)}$ electric field concentration tensor for the $i$-th phase. For simplicity, I assume that both phases are randomly oriented and thus the effective conductivity is isotropic. For randomly oriented particles, $\mathbf{R}^{(i,*)}$ is given by (recalling that $\mathbf{A}$ is given in equation \ref{eq:emt_depolarization_tensor}),
+\begin{equation}
+\begin{split}
+    R^{(j,*)}
+    &= \frac{1}{3}\text{trace}\left(
+        \left[\mathbf{I}+\mathbf{A}{\sigma^*}^{-1}(\sigma_j\mathbf{I}-\sigma^*)\right]^{-1}
+        \right)\\
+    &= \frac{1}{3}\text{trace}\left(
+        \left[\mathbf{I} +
+        \frac{(\sigma_j-\sigma^*)}{\sigma^*}\left[\begin{array}{ccc}
+            Q & & \\
+            & Q & \\
+            & & 1-2Q
+        \end{array}\right]
+        \right]^{-1}
+        \right) \\
+    & = \frac{1}{3}\text{trace}\left(
+            \sigma^*\left[\begin{array}{ccc}
+            \sigma^* + Q(\sigma_j - \sigma^*) & & \\
+            & \sigma^* + Q(\sigma_j - \sigma^*) & \\
+            & & \sigma_j - 2Q(\sigma_j - \sigma^*)
+        \end{array}
+            \right]^{-1}
+        \right) \\
+    & =\frac{\sigma^*}{3}\left( \frac{2}{\sigma^* + Q(\sigma_j - \sigma^*)} + \frac{1}{\sigma_j - 2Q(\sigma_j - \sigma^*)}\right)
+\end{split}
+\label{eq:emt_r_random}
+\end{equation}
+where $Q$ is a scalar that depends on the geometry of the particles composing each phase of material. For spherical particles, $Q=1/3$, for ellipsoidal particles, the expression is given in equations \ref{eq:emt_q_oblate_spheroid}, \ref{eq:emt_q_prolate_spheroid}.
+
+For the sensitivity calculation, we require the derivative of $\sigma^*$ with respect to the concentration $\phi$. I will solve for it implicitly. Starting from equation \ref{eq:emt_mapping}, we have
+\begin{displaymath}
+\begin{split}
+    - (\sigma^* - \sigma_0)& R^{(0,*)}
+    + (1-\varphi)R^{(0,*)}\frac{\partial \sigma^*}{\partial \varphi}
+    + (1-\varphi)(\sigma^* - \sigma_0)\frac{\partial R^{(0,*)}}{\partial \varphi} \\
+    & + (\sigma^* - \sigma_1)R^{(1,*)}
+    + \varphi R^{(1,*)} \frac{\partial \sigma^*}{\partial \varphi}
+    + \varphi(\sigma^* - \sigma_1)\frac{\partial R^{(1,*)}}{\partial \varphi}
+    = 0
+    % (1-\varphi)(\sigma^* - \sigma_0)R^{(0,*)} + \varphi(\sigma^* - \sigma_1)R^{(1,*)} = 0
+\end{split}
+\end{displaymath}
+As the only dependence of $R^{(j,*)}$ on $\varphi$ is through $\sigma^*$, we can use the chain rule, giving
+\begin{displaymath}
+\begin{split}
+    \left[
+    (1-\varphi)\left(
+        R^{(0,*)} + (\sigma^* - \sigma_0)\frac{\partial R^{(0,*)}}{\partial \sigma^*}
+    \right) + \varphi \left(
+        R^{(1,*)}  + (\sigma^* - \sigma_1)\frac{\partial R^{(1,*)}}{\partial \sigma^*}
+    \right)
+    \right]
+    \frac{\partial \sigma^*}{\partial \varphi}
+    \\  = (\sigma^* - \sigma_0)  R^{(0,*)}  - (\sigma^* - \sigma_1)R^{(1,*)}
+\end{split}
+\end{displaymath}
+Thus, the derivative of the effective conductivity with respect to the concentration of phase-1 material is
+\begin{equation}
+\begin{split}
+    \frac{\partial \sigma^*}{\partial \varphi}
+    =
+    \left[
+    (1-\varphi)R^{(0,*)} + \varphi R^{(1,*)}
+    + (1-\varphi)(\sigma^* - \sigma_0)\right.&\left.\frac{\partial R^{(0,*)}}{\partial \sigma^*}
+    + \varphi(\sigma^* - \sigma_1)\frac{\partial R^{(1,*)}}{\partial \sigma^*}
+    \right]^{-1} \\
+    (&\sigma^* - \sigma_0)R^{(0,*)}  - (\sigma^* - \sigma_1)R^{(1,*)}
+\end{split}
+\end{equation}
+The derivative of the electric field concentration tensor with respect the the effective conductivity is given by
+\begin{equation}
+\begin{split}
+\frac{\partial R^{(j, *)}}{{\partial \sigma^*}} =
+\frac{1}{3}\left( 2\right.&\left.[\sigma^* + Q(\sigma_j - \sigma^*) ]^{-1} + [\sigma_j - 2Q(\sigma_j - \sigma^*)]^{-1}\right)
+\\ &+ \frac{\sigma^*}{3}\left(
+\frac{-2(1 - Q)}{(\sigma^* + Q(\sigma_j - \sigma^*))^2} + \frac{-2Q}{(\sigma_j - 2Q(\sigma_j - \sigma^*))^2}
+\right)
+\end{split}
+\end{equation}

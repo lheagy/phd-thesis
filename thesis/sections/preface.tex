@@ -3,15 +3,25 @@
 
 \chapter{Preface}
 
-Chapter \ref{ch:phys_prop_model} presents an approach for constructing a physical property
-model of a fractured volume of rock.
-Mike Wilt, Jiuping Chen, Nestor Cuevas at Schlumberger.
-An earlier version of this work was presented at three conferences
-\cite{Heagy2013, Heagy2014, Wilt2014} and included a patent \cite{Wilt2015}.
+The research I conducted for this dissertation was completed at the Geophysical Inversion Facility at the University of British Columbia with advisement from Dr. Douglas Oldenburg. During my time as a PhD student, I also completed two internships, the first with the Schlumberger Electromagnetics Imaging group, under the advisement of Dr. Michael Wilt, and the second at Schlumberger Doll Research, under the advisement of Dr. Dzevat Omeragic. These internships informed my understanding of hydraulic fracturing and industry practices for electromagnetic imaging. The research presented in this thesis has resulted in three peer-reviewed publications, seven conference proceedings and several auxiliary works.
 
-Chapter \ref{ch:modelling_steel_cased_wells} was submitted to Computers and Geosciences and is currently under review.
-The submitted manuscript is available on the ArXiv \cite{}.
-Preliminary versions of this work were presented at two conferences \cite{Heagy2015, Heagy2017a}
+Chapter \ref{ch:phys-prop-model} presents an approach for constructing a physical property
+model of a fractured volume of rock. Dr. Wilt had the initial idea to use effective medium theory to estimate the coarse-scale conductivity of a fractured volume of rock. I developed the two-step workflow, the algorithm used to solve for effective conductivity, and performed all numerical simulations in this chapter. Dr. Oldenburg advised on all of these developments. Earlier versions of this work were presented at three conferences \citep{Heagy2013, Heagy2014, Wilt2014} and included in the patent \cite{Wilt2015}.
 
+Chapter \ref{ch:casing-software} discusses a finite volume approach for simulating Maxwell’s equations on cylindrical meshes. This work has been submitted to \emph{Computers and Geosciences} and is available on arXiv \citep{Heagy2018a}. Preliminary versions of this work were included in two conference abstracts \citep{Heagy2015, Heagy2017a}. I implemented the software within the SimPEG framework and the code-review was conducted by Dr. Rowan Cockett. Dr. Oldenburg advised on the software development, testing, and content of the chapter. I performed the numerical simulations that comprise the examples in this chapter. Much of the numerical work in this chapter is supported by course material and instruction from Dr. Eldad Haber and Dr. Uri Ascher \citep{Haber2014, Ascher2008}.
 
-Appendix \ref{ch:simpegem} was published in Computers and Geosciences \citep{Heagy2017}
+Chapter \ref{ch:casing-dc} discusses aspects of the fundamental physics of DC resistivity with steel-cased wells and demonstrates survey design considerations. This work was submitted to \emph{Geophysical Journal International} for peer review. I conducted all of the numerical experiments in this chapter with advisement from Dr. Oldenburg. The application of DC resistivity to the casing integrity problem was prompted by conversations with Dr. Wilt.
+
+Chapters \ref{ch:casing-em} explores the physics of electromagnetics in settings with steel-cased wells. I conducted all of the experiments in this chapter with advisement from Dr. Oldenburg. Earlier versions of this work were included in \citep{Heagy2015, Heagy2017a}.
+
+Chapter \ref{ch:inversion} discusses the inverse problem for imaging a fractured volume of rock. I developed the idea of using effective medium theory in the inversion, implemented the necessary software components and performed the numerical experiments in this chapter, all with advisement from Dr. Oldenburg. An early version of the idea of using effective medium theory to invert for fracture concentration was presented in a conference publication \citep{Heagy2014a}. Dr. Cockett contributed to the development of examples in the conference publication.
+
+Appendix \ref{app:concentric_spheres} and Appendix \ref{app:scemt-derivs} contain details relevant to Chapters \ref{ch:phys-prop-model} and \ref{ch:inversion}. I performed both derivations with advisement from Dr. Oldenburg. The derivation in \ref{app:concentric_spheres} was inspired by a question from Dr. Frank Morrison.
+
+Appendix \ref{app:simpegem} describes the SimPEG electromagnetics module which is the backbone for the numerical experiments conducted in this thesis. This work was published in \emph{Computers \& Geosciences} \citep{Heagy2017} and was conducted collaboratively with Dr. Cockett, Dr. Seogi Kang, and Mr. Gudni Rosenkjaer with advisement from Dr. Oldenburg. I led the development and implementation of the forward-simulation framework as well as the drafting of the manuscript. Dr. Kang performed the inversion of the Bookpurnong data as described in Section \ref{sec:BookpurnongFieldExample}. All authors contributed edits to the text.
+
+Appendix \ref{app:education} provides an overview of the GeoSci.xyz project (\href{https://geosci.xyz}{https://geosci.xyz}) which is a collaborative effort to develop educational resources for the geosciences. This effort has been led by myself, Dr. Oldenburg, Dr. Kang, and Dr. Cockett, and has benefitted from a community of contributors. Notably, Mr. Dominique Fournier, Mr. Devin Cowan, Mr. Thibaut Astic, Dr. Sarah Devriese, Mr. Michael Mitchell, and Dr. Dianne Mitchenson, have invested significant efforts in contributing content.
+
+Software development has been a critical part of this work. In particular, the research conducted in this thesis builds upon and contributes to the open-source SimPEG ecosystem, described in \cite{Cockett2015}, of which I am a co-author. Excerpts of the background information on inversion in Section \ref{sec:background-inversions} are adapted from \cite{Cockett2015}. My personal contribution to SimPEG exceeds 100,000 lines of code. In addition, I help maintain SimPEG and lead community development efforts by responding to code-usage questions and conducting code-reviews. The research in this thesis benefits from the efforts of all of those who are involved in the SimPEG community. Notably, Dr. Cockett and Dr. Kang have made substantial contributions to the architecture and functionality of SimPEG that have been used to conduct the research in this thesis; they have also reviewed and provided input on much of the code that I have written.
+
+The research in this thesis makes use of tools in the scientific Python ecosystem including Jupyter, Numpy, SciPy, and Matplotlib \citep{Perez2015, numpy, Jones2001, matplotlib} and relies upon the global community of contributors who develop and maintain these open-source resources.
