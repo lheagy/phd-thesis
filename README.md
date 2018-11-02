@@ -18,36 +18,36 @@ All of the software developed during the course of this research is open-source.
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1434457.svg)](https://doi.org/10.5281/zenodo.1434457)
 
 - GitHub: https://github.com/simpeg-research/heagy-2018-fracture-physprops
-- DOI: [10.5281/zenodo.1434456](https://doi.org/10.5281/zenodo.1434457)
+- DOI: [10.5281/zenodo.1434456](https://doi.org/10.5281/zenodo.1434456)
 
-### Chapter 3:
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1220428.svg)](https://doi.org/10.5281/zenodo.1220428)
+### Chapter 3: Modelling electromagnetics on cylindrical meshes
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1220427.svg)](https://doi.org/10.5281/zenodo.1220427)
 
 - GitHub: https://github.com/simpeg-research/heagy-2018-emcyl 
-- DOI: [10.5281/zenodo.1220427](https://doi.org/10.5281/zenodo.1220428)
+- DOI: [10.5281/zenodo.1220427](https://doi.org/10.5281/zenodo.1220427)
 
-## Chapter 4:
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1324544.svg)](https://doi.org/10.5281/zenodo.1324544)
+### Chapter 4: Direct current resistivity with steel-cased wells
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1324543.svg)](https://doi.org/10.5281/zenodo.1324543)
 
 - GitHub: https://github.com/simpeg-research/heagy-2018-dc-casing
-- DOI: [10.5281/zenodo.1324543](https://doi.org/10.5281/zenodo.1324544)
+- DOI: [10.5281/zenodo.1324543](https://doi.org/10.5281/zenodo.1324543)
 
-### Chapter 5:
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1434455.svg)](https://doi.org/10.5281/zenodo.1434455)
+### Chapter 5: Electromagnetics with steel cased wells
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1434454.svg)](https://doi.org/10.5281/zenodo.1434454)
 
 - GitHub: https://github.com/simpeg-research/heagy-2018-em-casing
-- DOI: [10.5281/zenodo.1434454](https://doi.org/10.5281/zenodo.1434455)
+- DOI: [10.5281/zenodo.1434454](https://doi.org/10.5281/zenodo.1434454)
 
-### Chapter 6: 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1434459.svg)](https://doi.org/10.5281/zenodo.1434459)
+### Chapter 6: An inversion approach for subsurface injections
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1434458.svg)](https://doi.org/10.5281/zenodo.1434458)
 
 - GitHub: https://github.com/simpeg-research/heagy-2018-injection-inversions 
-- DOI: [10.5281/zenodo.1434459](https://doi.org/10.5281/zenodo.1434459)
+- DOI: [10.5281/zenodo.1434458](https://doi.org/10.5281/zenodo.1434458)
 
-### Appendix D:
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1434470.svg)](https://doi.org/10.5281/zenodo.1434470)
+### Appendix D: A framework for simulation and inversion in electromagnetics
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1434469.svg)](https://doi.org/10.5281/zenodo.1434469)
 
 - GitHub: https://github.com/simpeg-research/heagyetal-2017-simpegem
-- DOI: [10.5281/zenodo.1434470](https://doi.org/10.5281/zenodo.1434470)
+- DOI: [10.5281/zenodo.1434469](https://doi.org/10.5281/zenodo.1434469)
 
  
