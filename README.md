@@ -1,7 +1,7 @@
 # Electromagnetic imaging of subsurface injections
 _Lindsey Heagy_
 
-This repository contains all of the latex used to generate the [thesis pdf](./thesis/thesis.pdf). All of the notebooks used to generate the figures in the thesis are available. 
+This repository contains all of the latex used to generate the [thesis pdf](./thesis/thesis.pdf). All of the notebooks used to generate the figures in the thesis are available and Jupyter notebooks or python scripts. They are listed [by chapter](#Notebooks-by-Chapter) below.  
 
 ## Abstract
 
