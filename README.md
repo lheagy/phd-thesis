@@ -16,24 +16,32 @@ All of the software developed during the course of this research is open-source.
 ## Notebooks by Chapter
 ### Chapter 2: A physical property model for a fractured volume of rock
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1434457.svg)](https://doi.org/10.5281/zenodo.1434457)
+[![Build Status](https://travis-ci.org/simpeg-research/heagy-2018-fracture-physprops.svg?branch=master)](https://travis-ci.org/simpeg-research/heagy-2018-fracture-physprops)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/simpeg-research/heagy-2018-fracture-physprops/master)
 
 - GitHub: https://github.com/simpeg-research/heagy-2018-fracture-physprops
 - DOI: [10.5281/zenodo.1434456](https://doi.org/10.5281/zenodo.1434456)
 
 ### Chapter 3: Modelling electromagnetics on cylindrical meshes
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1220427.svg)](https://doi.org/10.5281/zenodo.1220427)
+[![Build Status](https://travis-ci.org/simpeg-research/heagy-2018-emcyl.svg?branch=master)](https://travis-ci.org/simpeg-research/heagy-2018-emcyl)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/simpeg-research/heagy-2018-emcyl/master?filepath=index.ipynb)
 
 - GitHub: https://github.com/simpeg-research/heagy-2018-emcyl 
 - DOI: [10.5281/zenodo.1220427](https://doi.org/10.5281/zenodo.1220427)
 
 ### Chapter 4: Direct current resistivity with steel-cased wells
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1324543.svg)](https://doi.org/10.5281/zenodo.1324543)
+[![Build Status](https://travis-ci.org/simpeg-research/heagy-2018-dc-casing.svg?branch=master)](https://travis-ci.org/simpeg-research/heagy-2018-dc-casing)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/simpeg-research/heagy-2018-dc-casing/master?filepath=index.ipynb)
 
 - GitHub: https://github.com/simpeg-research/heagy-2018-dc-casing
 - DOI: [10.5281/zenodo.1324543](https://doi.org/10.5281/zenodo.1324543)
 
 ### Chapter 5: Electromagnetics with steel cased wells
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1434454.svg)](https://doi.org/10.5281/zenodo.1434454)
+[![Build Status](https://travis-ci.org/simpeg-research/heagy-2018-em-casing.svg?branch=master)](https://travis-ci.org/simpeg-research/heagy-2018-em-casing)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/simpeg-research/heagy-2018-em-casing/master)
 
 - GitHub: https://github.com/simpeg-research/heagy-2018-em-casing
 - DOI: [10.5281/zenodo.1434454](https://doi.org/10.5281/zenodo.1434454)
