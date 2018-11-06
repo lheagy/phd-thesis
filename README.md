@@ -48,6 +48,8 @@ All of the software developed during the course of this research is open-source.
 
 ### Chapter 6: An inversion approach for subsurface injections
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1434458.svg)](https://doi.org/10.5281/zenodo.1434458)
+[![Build Status](https://travis-ci.org/simpeg-research/heagy-2018-injection-inversions.svg?branch=master)](https://travis-ci.org/simpeg-research/heagy-2018-injection-inversions)
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/simpeg-research/heagy-2018-injection-inversions/master)
 
 - GitHub: https://github.com/simpeg-research/heagy-2018-injection-inversions 
 - DOI: [10.5281/zenodo.1434458](https://doi.org/10.5281/zenodo.1434458)
