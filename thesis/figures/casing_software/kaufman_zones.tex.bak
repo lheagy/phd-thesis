@@ -1,7 +1,0 @@
-\begin{figure}
-    \begin{center}
-    \includegraphics[width=0.7\columnwidth]{figures/kaufman_zones.png}
-    \end{center}
-\caption{(a) Total charge density, (b) secondary charge density, (c) electric field, and (d) current density in a section of the pipe near the source at z=-500m.}
-\label{fig:kaufman_zones}
-\end{figure}

@@ -1,7 +1,0 @@
-\begin{figure}
-    \begin{center}
-    \includegraphics[width=\columnwidth]{figures/commer_mesh.png}
-    \end{center}
-\caption{Depth slice (left) and cross section (right) through the 3D cylindrical mesh used for the comparison with \cite{Commer2015}. The source and recievers were positioned along the $\theta = 90^\circ$ line.}
-\label{fig:commer_mesh}
-\end{figure}
