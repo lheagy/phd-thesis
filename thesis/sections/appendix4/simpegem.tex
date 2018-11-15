@@ -41,7 +41,7 @@ Deterministic, gradient-based approaches to the inverse problem are
 commonplace in EM inversions.   Relevance of the recovered inversion model is
 increased by incorporating \emph{a priori} geologic information and
 assumptions. This can be accomplished through, the regularization term
-\citep{OldenburgTutorial, Constable1987} or parameterizing the inversion model
+\citep{Oldenburg2005, Constable1987} or parameterizing the inversion model
 \citep{Pidlisecky2011, McMillan2015a, Kang2015}. Multiple data sets may be
 considered through cooperative or joint inversions \citep{Haber1998,
 McMillan2015}.
@@ -183,7 +183,7 @@ instructions that capture the heuristics for solving the inverse problem; for
 example, specifying a target misfit that, once reached, terminates the
 inversion, or using a beta-cooling schedule that updates the value of the
 trade-off parameter between the \DataMisfit and \Regularization (cf.
-\cite{parker1994geophysical, OldenburgTutorial} and references within).
+\cite{Parker1994, Oldenburg2005} and references within).
 
 The output of this process is a model that must be assessed and evaluated
 prior to interpretation; the entire process requires iteration by a human,
@@ -200,7 +200,7 @@ forward simulation and compute sensitivities is implemented. Specific to the
 EM problem, we require this machinery for Maxwell's equations. As such, we
 focus our attention  on the \texttt{Forward Simulation} portion of the
 implementation for the EM problem and refer the reader to
-\cite{Cockett2015} and \cite{OldenburgTutorial} for a more complete discussion
+\cite{Cockett2015} and \cite{Oldenburg2005} for a more complete discussion
 of  inversions.
 
 
@@ -212,7 +212,7 @@ of  inversions.
 Maxwell's equations are the governing equations of electromagnetic problems.
 They are a set of coupled partial differential equations that connect electric
 and magnetic fields and fluxes. We consider the quasi-static regime, ignoring
-the contribution of displacement current \citep{Ward1988, telford1990applied,
+the contribution of displacement current \citep{Ward1988, Telford1990,
 Haber2014a} \footnote{In most geophysical electromagnetic surveys, low frequencies or late-time measurements are employed. In these scenarios $\sigma \gg \varepsilon_0 \omega$ (eg. conductivities are typically less than 1S/m, $\varepsilon_0 = 8.85 \times 10^{-12} F/m$ and frequencies considered are generally less than $10^5$ Hz), so displacement current can safely be ignored.}
 
 We begin by considering the first order quasi-static EM problem in time,
